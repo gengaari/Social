@@ -1,0 +1,14 @@
+﻿@model SocialMvc.Models.ApplicationUser
+@{
+    var allRoles = ViewBag.AllRoles as List<Microsoft.AspNetCore.Identity.IdentityRole>;
+    var userRoles = ViewBag.UserRoles as IList<string>;
+}
+<h1>Edit Roles for @Model.Email</h1>
+<form method="post">
+@foreach(var role in allRoles)
+{
+    <input type="checkbox" name="roles" value="@role.Name" @(userRoles.Contains(role.Name) ? "checked" : "") /> @role.Name <br/>
+}
+<button type="submit">Save</button>
+</form>
+<a href="@Url.Action("Users")">Back</a>

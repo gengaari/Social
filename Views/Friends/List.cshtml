@@ -1,0 +1,10 @@
+﻿@model List<SocialMvc.Models.FriendRequest>
+<h1>Friends</h1>
+<table border="1">
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td>@(f.Sender.Email == User.Identity.Name ? f.Receiver.Email : f.Sender.Email)</td>
+        </tr>
+    }
+</table>

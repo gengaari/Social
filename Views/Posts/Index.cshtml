@@ -1,0 +1,15 @@
+﻿@model List<SocialMvc.Models.Post>
+<h1>Posts</h1>
+<a href="@Url.Action("Create")">Create Post</a>
+<table border="1">
+    <tr><th>Title</th><th>Author</th><th>Visibility</th><th>CreatedAt</th></tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Title</td>
+            <td>@p.Author.Email</td>
+            <td>@p.Visibility</td>
+            <td>@p.CreatedAt</td>
+        </tr>
+    }
+</table>

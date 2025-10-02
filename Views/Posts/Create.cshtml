@@ -1,0 +1,12 @@
+﻿<h1>Create Post</h1>
+<form method="post">
+    <input type="text" name="title" placeholder="Title" required /><br />
+    <textarea name="content" placeholder="Content" required></textarea><br />
+    <select name="visibility">
+        <option value="Public">Public</option>
+        <option value="Private">Private</option>
+        <option value="FriendsOnly">Friends Only</option>
+    </select><br />
+    <button type="submit">Create</button>
+</form>
+<a href="@Url.Action("Index")">Back</a>

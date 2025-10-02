@@ -1,0 +1,17 @@
+﻿@model List<SocialMvc.Models.FriendRequest>
+<h1>Friend Requests</h1>
+<table border="1">
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Sender.Email</td>
+            <td>
+                <form method="post" asp-action="Respond">
+                    <input type="hidden" name="id" value="@r.Id" />
+                    <button name="accept" value="true">Accept</button>
+                    <button name="accept" value="false">Reject</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
